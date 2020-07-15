@@ -18,7 +18,7 @@ export default createWorkspace(workspace => {
             {
               ...(config.projects.length ? config.projects[0] : {}),
               displayName: 'quilt',
-              rootDir: '/Users/brianryu/src/github.com/Shopify/quilt/tests',
+              rootDir: 'tests',
               setupFiles: ['./setup.ts'],
               setupFilesAfterEnv: ['./each-test.ts'],
             },
