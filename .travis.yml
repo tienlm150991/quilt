@@ -15,12 +15,13 @@ matrix:
     - <<: *node_container
       name: 'Node - build, type-check, and end-to-end tests'
       script:
-        - yarn build --verbose
-        - yarn test:ci --testPathPattern react-server address
+        - yarn build
+        - yarn type-check
+        - yarn test:ci "(address|react-server)"
     - <<: *node_container
       name: 'Node - unit tests'
       script:
-        - yarn test:ci --testPathIgnorePatterns react-server address
+        - yarn test:ci "^(?:(?!(address|react-server)).)*$"
         - yarn codecov
     - <<: *node_container
       name: 'Node - lint'

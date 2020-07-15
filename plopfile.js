@@ -64,6 +64,11 @@ module.exports = function (plop) {
         templateFile: 'templates/test.hbs.ts',
       },
       {
+        type: 'add',
+        path: 'packages/{{name}}/sewing-kit.config.ts',
+        templateFile: 'templates/sewing-kit.templateconfig.hbs.ts',
+      },
+      {
         type: 'modify',
         path: 'packages/tsconfig.json',
         transform: (file, {name}) => {
@@ -90,6 +95,30 @@ module.exports = function (plop) {
         data: {jsPackages, gems},
       },
     ],
+  });
+
+  plop.setGenerator('sk-next', {
+    prompts: [],
+    actions: jsPackages.map(({name}) => {
+      return {
+        type: 'add',
+        path: `packages/${name}/sewing-kit.config.ts`,
+        templateFile: 'templates/sewing-kit.templateconfig.hbs.ts',
+        force: true,
+      };
+    }),
+  });
+
+  plop.setGenerator('sk-next-pkg', {
+    prompts: [],
+    actions: jsPackages.map(({name}) => {
+      return {
+        type: 'modify',
+        path: `packages/${name}/package.json`,
+        pattern: /dist\/src\/index/g,
+        template: 'index',
+      };
+    }),
   });
 };
 

@@ -2,7 +2,7 @@
 *.scss.d.ts
 *.graphql.d.ts
 
-#TS output
+# TS output
 packages/**/dist
 dist
 
@@ -44,3 +44,12 @@ tmp
 **/test.log
 
 *.tsbuildinfo
+
+.sewing-kit
+build
+packages/*/*.esnext
+packages/*/*.node
+packages/*/*.mjs
+packages/*/*.d.ts
+packages/*/*.js
+tests/*.d.ts
