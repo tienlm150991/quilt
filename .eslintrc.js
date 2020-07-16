@@ -10,7 +10,6 @@ module.exports = {
     project: [
       'packages/tsconfig.json',
       'packages/tsconfig_base.json',
-      'tests/tsconfig.eslint.json',
       'tsconfig.eslint.json',
     ],
   },
@@ -45,8 +44,7 @@ module.exports = {
         '**/test/**/*.tsx',
         '**/tests/**/*.ts',
         '**/tests/**/*.tsx',
-        'sewing-kit.config.ts',
-        'config/sewing-kit/**/*',
+        '**/sewing-kit.config.ts',
       ],
       rules: {
         // We disable `import/no-extraneous-dependencies` for test files because it
