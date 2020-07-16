@@ -23,8 +23,6 @@ export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
 
         hooks.jestConfig?.hook(config => ({
           ...config,
-          setupFiles: ['../../tests/setup.ts'],
-          setupFilesAfterEnv: ['../../tests/each-test.ts'],
           testRegex: '.*\\.test\\.tsx?$',
           transform: {
             ...config.transform,
