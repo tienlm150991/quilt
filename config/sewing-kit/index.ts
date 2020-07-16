@@ -9,7 +9,7 @@ import {typescript} from '@sewing-kit/plugin-typescript';
 import {buildFlexibleOutputs} from '@sewing-kit/plugin-package-flexible-outputs';
 
 export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
-  return createComposedProjectPlugin<Package>('Quilt.DefaultProject', [
+  return createComposedProjectPlugin<Package>('Quilt.Package', [
     javascript(),
     typescript(),
     react(),
@@ -17,7 +17,7 @@ export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
       esnext: !binaryOnly,
       esmodules: !binaryOnly,
     }),
-    createProjectTestPlugin('Quilt.Test', ({hooks}) => {
+    createProjectTestPlugin('Quilt.PackageTest', ({hooks}) => {
       hooks.configure.hook(hooks => {
         hooks.jestEnvironment?.hook(_ => jestEnv);
 
@@ -30,11 +30,8 @@ export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
           },
           watchPathIgnorePatterns: [
             ...config.watchPathIgnorePatterns,
-            '<rootDir>/node_modules/',
-            '<rootDir>/packages/web-worker/.*/fixtures',
-            '<rootDir>/packages/react-server/.*/fixtures',
+            '<rootDir>/.*/tests?/.*fixtures',
           ],
-          coverageDirectory: './coverage/',
         }));
 
         hooks.babelConfig?.hook(_ => ({

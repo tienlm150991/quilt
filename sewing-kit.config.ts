@@ -9,18 +9,19 @@ export default createWorkspace(workspace => {
     eslint(),
     jest(),
     workspaceTypeScript(),
-    createWorkspaceTestPlugin('Quilt.NonPackageTests', ({hooks}) => {
+    createWorkspaceTestPlugin('Quilt.WorkspaceTest', ({hooks}) => {
       hooks.configure.hook(hooks => {
         hooks.jestConfig?.hook(config => ({
           ...config,
           projects: [
             ...config.projects,
             {
-              ...(config.projects.length ? config.projects[0] : {}),
+              ...config.projects[0],
               displayName: 'quilt',
               rootDir: 'tests',
             },
           ],
+          coverageDirectory: './coverage',
         }));
       });
     }),
