@@ -31,7 +31,7 @@
     "@shopify/jest-dom-mocks": "^2.9.1"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }

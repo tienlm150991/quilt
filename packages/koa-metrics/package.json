@@ -34,7 +34,7 @@
   },
   "sideEffects": false,
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }

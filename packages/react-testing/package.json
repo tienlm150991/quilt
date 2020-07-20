@@ -32,7 +32,7 @@
     "faker": "^4.1.0"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo",
     "matchers.js",
     "matchers.d.ts"

@@ -34,7 +34,7 @@
     "@shopify/enzyme-utilities": "^2.1.13"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }

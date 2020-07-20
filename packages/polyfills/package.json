@@ -41,7 +41,7 @@
     "@types/caniuse-api": "^3.0.0"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }

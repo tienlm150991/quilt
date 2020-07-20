@@ -35,7 +35,7 @@
     "graphql-typed": "^0.5.0"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo",
     "matchers.d.ts",
     "matchers.js"

@@ -30,7 +30,7 @@
     "react": "^16.4.1"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ],
   "sideEffects": false

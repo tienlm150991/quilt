@@ -59,7 +59,7 @@
     "fs-extra": "^8.1.0"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo",
     "babel.d.ts",
     "babel.js",

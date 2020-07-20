@@ -39,7 +39,7 @@
     "apollo-link": "^1.2.3"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }

@@ -61,7 +61,7 @@
     "webpack-virtual-modules": "^0.2.2"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo",
     "webpack-plugin.d.ts",
     "webpack-plugin.js"

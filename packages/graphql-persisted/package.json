@@ -33,7 +33,7 @@
     "@shopify/sewing-kit-koa": "^6.3.4"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo",
     "apollo.js",
     "apollo.d.ts",

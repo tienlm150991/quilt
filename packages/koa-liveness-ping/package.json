@@ -34,7 +34,7 @@
     "tslib": "^1.9.3"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }

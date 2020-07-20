@@ -45,7 +45,7 @@
     "@types/node-gzip": "^1.1.0"
   },
   "files": [
-    "dist/*",
+    "build/*",
     "!tsconfig.tsbuildinfo"
   ]
 }
