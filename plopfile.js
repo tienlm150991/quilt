@@ -96,30 +96,6 @@ module.exports = function (plop) {
       },
     ],
   });
-
-  plop.setGenerator('sk-next', {
-    prompts: [],
-    actions: jsPackages.map(({name}) => {
-      return {
-        type: 'add',
-        path: `packages/${name}/sewing-kit.config.ts`,
-        templateFile: 'templates/sewing-kit.templateconfig.hbs.ts',
-        force: true,
-      };
-    }),
-  });
-
-  plop.setGenerator('sk-next-pkg', {
-    prompts: [],
-    actions: jsPackages.map(({name}) => {
-      return {
-        type: 'modify',
-        path: `packages/${name}/package.json`,
-        pattern: /dist\/src\/index/g,
-        template: 'index',
-      };
-    }),
-  });
 };
 
 function getPackages(type = 'js') {
