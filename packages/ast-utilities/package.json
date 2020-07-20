@@ -33,6 +33,10 @@
   },
   "files": [
     "build/*",
+    "javascript.js",
+    "javascript.d.ts",
+    "markdown.js",
+    "markdown.d.ts",
     "!tsconfig.tsbuildinfo"
   ],
   "dependencies": {

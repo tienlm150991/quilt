@@ -38,6 +38,8 @@
   },
   "files": [
     "build/*",
+    "testing.js",
+    "testing.d.ts",
     "!tsconfig.tsbuildinfo"
   ]
 }
