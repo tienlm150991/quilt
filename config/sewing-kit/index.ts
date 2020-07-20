@@ -31,11 +31,10 @@ export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
     }),
     createProjectTestPlugin('Quilt.PackageTest', ({hooks}) => {
       hooks.configure.hook(hooks => {
-        hooks.jestEnvironment?.hook(_ => jestEnv);
+        hooks.jestEnvironment?.hook(() => jestEnv);
 
         hooks.jestConfig?.hook(config => ({
           ...config,
-          testRegex: '.*\\.test\\.tsx?$',
           transform: {
             ...config.transform,
             '\\.(gql|graphql)$': 'jest-transform-graphql',
@@ -46,7 +45,7 @@ export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
           ],
         }));
 
-        hooks.babelConfig?.hook(_ => ({
+        hooks.babelConfig?.hook(() => ({
           presets: [
             ['babel-preset-shopify/node', {typescript: true}],
             'babel-preset-shopify/react',
