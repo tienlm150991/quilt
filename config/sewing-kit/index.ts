@@ -2,6 +2,7 @@ import {
   Package,
   createComposedProjectPlugin,
   createProjectTestPlugin,
+  createProjectBuildPlugin,
 } from '@sewing-kit/plugins';
 import {react} from '@sewing-kit/plugin-react';
 import {javascript} from '@sewing-kit/plugin-javascript';
@@ -16,6 +17,17 @@ export function quiltPackage({binaryOnly = true, jestEnv = 'jsdom'} = {}) {
     buildFlexibleOutputs({
       esnext: !binaryOnly,
       esmodules: !binaryOnly,
+    }),
+    createProjectBuildPlugin('Quilt.PackageBuild', ({hooks}) => {
+      hooks.target.hook(({hooks}) => {
+        hooks.configure.hook(hooks => {
+          hooks.babelIgnorePatterns.hook(ext => [
+            ...ext,
+            '**/*.test.ts',
+            '**/*.test.tsx',
+          ]);
+        });
+      });
     }),
     createProjectTestPlugin('Quilt.PackageTest', ({hooks}) => {
       hooks.configure.hook(hooks => {
